@@ -14,7 +14,7 @@ def save_user(user):
     '''
     Function to saver new user
     '''
-    user.save_user():
+    user.save_user()
 
 def create_credential(credential_name,user_name,password):
     '''
@@ -47,3 +47,34 @@ def find_credential(name):
     '''
     
     return Credential.find_by_name(name) 
+
+def main():
+    print("Hello Welcome to your Accounts Password Store...\n Please enter one of the following to proceed.\n CA ---  Create New Account  \n LI ---  Have An Account  \n")
+    short_code=input("").lower().strip()
+    if short_code =='CA':
+        print("Sign Up")
+        print('*' * 50)
+        username = input("User_Name: ")
+        while True:
+            print(" TP - To type your own pasword:\n GP - To generate random Password")
+            password_Choice = input().lower().strip()
+            if password_Choice == 'tp':
+                password = input("Enter Password\n")
+                break
+            elif password_Choice == 'gp':
+                password = generate_Password()
+                break
+            else:
+                print("Invalid password please try again")
+        save_user(create_user(user_name, user_login))
+        print(f"A new Account for {user_name} has been created")
+        print(f"You can now login to your {user_name} account using your password.")
+        print ('\n')
+
+    while True
+
+
+
+
+if __name__ == '__main__':
+    main()
