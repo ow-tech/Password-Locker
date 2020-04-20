@@ -20,3 +20,12 @@ class Credential:
         method that deletes credential
         '''
         Credential.credential_list.remove(self)
+    
+
+    @classmethod
+    def find_by_name(cls,name):
+        for credential in cls.credential_list:
+            if credential.password == name:
+                return credential
+
+        return False
