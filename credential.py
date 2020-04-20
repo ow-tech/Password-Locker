@@ -1,3 +1,7 @@
+import random
+import string
+import pyperclip
+
 class Credential:
 
     credential_list = []
@@ -29,3 +33,19 @@ class Credential:
                 return credential
 
         return False
+
+    @classmethod
+    def display_credential(cls):
+        '''
+        method that returns all of the credentials in credential list
+        '''
+        return cls.credential_list 
+
+    def genarate_password(stringLength=8):
+        '''
+        method for randomly generating a password
+        '''
+        generatedPassword = string.asscii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+        return ''.join(random.choice(generatedPassword)for i in range(stringLength))
+
+
