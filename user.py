@@ -1,4 +1,6 @@
 class User:
+
+    user_list = []
     ''''
     Class that authenticates User
     '''
@@ -9,3 +11,4 @@ class User:
         self.user_login = user_login
     
     def save_user(self):
+        User.user_list.append(self)
