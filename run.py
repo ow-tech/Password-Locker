@@ -15,8 +15,15 @@ def save_user(user):
     Function to saver new user
     '''
     user.save_user():
-def delete_user(user):
+
+def create_credential(credential_name,user_name,password):
+    '''
+    Function that creates new credentials for a given user account
+    '''
+    new_credential =Credential(account_name,account_userName,password)
+    return new_credential
+def delete_credential(credential):
     '''
     function to delete user
     '''
-    user.delete_user()
+    credential.delete_user()
