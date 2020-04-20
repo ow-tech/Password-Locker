@@ -40,3 +40,10 @@ def display_credentials():
     Function that returns all the saved credential.
     """
     return Credential.display_credential()
+
+def find_credential(name):
+    '''
+    function for finding credential
+    '''
+    
+    return Credential.find_by_name(name) 
