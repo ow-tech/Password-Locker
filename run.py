@@ -22,6 +22,7 @@ def create_credential(credential_name,user_name,password):
     '''
     new_credential =Credential(account_name,account_userName,password)
     return new_credential
+
 def delete_credential(credential):
     '''
     function to delete user
@@ -33,3 +34,9 @@ def save_credential(credential):
     Function to save Credentials to the credentials list
     """
     credential.save_credential()
+
+def display_credentials():
+    """
+    Function that returns all the saved credential.
+    """
+    return Credential.display_credential()
