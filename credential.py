@@ -1,4 +1,6 @@
 class Credential:
+
+    credential_list = []
     '''
     class that generates new instances of credentials
     '''
@@ -6,3 +8,6 @@ class Credential:
         self.credential_name = credential_name
         self.usr_name = usr_name
         self.password = password
+
+    def save_credential(self):
+        Credential.credential_list.append(self)
