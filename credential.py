@@ -8,7 +8,7 @@ class Credential:
     '''
     class that generates new instances of credentials
     '''
-    def __init__(self,credential_name, usr_name,password):
+    def __init__(self,credential_name, user_name,password):
         self.credential_name = credential_name
         self.user_name = user_name
         self.password = password
