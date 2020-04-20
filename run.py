@@ -25,9 +25,9 @@ def create_credential(credential_name,user_name,password):
 
 def delete_credential(credential):
     '''
-    function to delete user
+    function to delete credential
     '''
-    credential.delete_user()
+    credential.delete_credential()
 
 def save_credential(credential):
     """
@@ -85,7 +85,61 @@ def main():
                         print('\n')
                     else:
                         print("Credentials do not match existing user")
-                    
+                    while True:
+                            print('''
+                            Use these short codes:
+                            CA -> Create new credential.
+                            DC -> Display your credential list
+                            DEL -> Delete credential
+                            EX ->Log out your credential account.''')
+                            short_code = input().upper()
+                            if short_code == "CA":
+                                print("Create new credential")
+                                print('_' * 20)
+                                credential_name = input('Credential name:')
+                                print('\n')
+                                user_name = input(f"{credential_name} user name:")
+                                print('\n')
+                                print('*' * 20)
+                                pwd = input(f"{credential_name} password:")
+                                save_credential(create_credential(credential_name,user_name,pwd))
+                                print('\n')
+                                print(f"A New {credential_name} Account with the user name  {user_name} has been created.")
+                                print ('\n')
+                            elif short_code == 'DC':
+                                if display_credential():
+                                        print("Here is your credential")
+                                        print('\n')
+                                        for credential in display_credential():
+                                            print(f"Credential name:{credential.credential_name}  User name: {credential.user_name} Password:{credential.password}")
+                                            print('\n')
+                                else:
+                                    print('\n')
+                                    print("You don't seem to have created any account yet")
+                                    print('\n')
+                            elif short_code =="DEL":
+                                print('\n')
+                                print("Enter the account name you want to delete")
+                                name = input().lower()
+                                if find_credential(name):
+                                    search_credential = find_credential(name)
+                                    print("_"*50)
+                                    search_credential.delete_credential()
+                                    print('\n')
+                                    print(f"Your stored credentials for : {search_credential.credential_name} successfully deleted!!!")
+                                    print('\n')
+                            elif short_code == "EX":
+                                print('\n')
+                                print(f"You have logged out your {account_name} account")
+                                print('\n')
+                                break  
+                    else:
+                        print("Credentials do not match existing user")           
+        else:
+            print('\n')
+            print("WRONG PASSWORD!! PLEASE ENTER CORRECT PASSWORD TO LOGIN")
+            print('\n')
+            print('\n')
 
 if __name__ == '__main__':
     main()                            
