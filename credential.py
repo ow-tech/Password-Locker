@@ -11,3 +11,12 @@ class Credential:
 
     def save_credential(self):
         Credential.credential_list.append(self)
+
+    def test_save_multiple_credentials(self):
+            '''
+            test that checks if multiple user objects are saved
+            '''
+            self.new_credential.save_credential()
+            test_credential=Credential("Intagram","Kim123","123kim") #new Credential
+            test_credential.save_credential()
+            self.assertEqual(len(Credential.credential_list),2)
