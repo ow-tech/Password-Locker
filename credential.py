@@ -74,3 +74,7 @@ class Credential:
     def copy_password(cls,name):
         credential_found = Credential.find_by_name(name)
         pyperclip.copy(credential_found.account_password)
+    def genarate_password(stringLength=8):
+        password_characters = string.ascii_uppercase + string.ascii_lowercase + string.digits + '!@#$%^&*?/|\()'
+        generated_password = ''.join(random.choice(password_characters) for i in range(stringLength))
+        

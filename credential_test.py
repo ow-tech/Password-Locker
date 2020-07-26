@@ -104,6 +104,8 @@ class TestCredential(unittest.TestCase):
         self.new_credential.save_credential()
         Credential.copy_password('Instagram')
         self.assertTrue(self.new_credential.account_password, pyperclip.paste())
+    def generate_password(stringLength=8):
+        account_password = 
 
 
 
