@@ -24,9 +24,9 @@ The user would like to.... :
 
 * Open Terminal {Ctrl+Alt+T}
 
-* git clone ```https://github.com/Owiti-Charles/Password-Locker.git```
+* git clone ```https://github.com/ow-tech/Password-Locker.git```
 
-* cd Password-Locker
+* cd passlocker
 
 * code . or atom . based on the text editor you have.
 
@@ -39,7 +39,7 @@ The user would like to.... :
         #FOR USER
         $ python3 user_test.py
 
-        FOR Credentials
+        #FOR Credentials
         $ python3 credential_test.py
 
 ## Technologies Used
@@ -47,7 +47,7 @@ The user would like to.... :
 * python3.6
 
 ## Known Bugs
-The application does not authenticate users and also the delete function does not work
+There are no known Bugs.
 
 
 ## Contact Information 
