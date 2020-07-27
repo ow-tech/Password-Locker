@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.6
 from user import User
 from credential import Credential
+import string, random
 
 
 def create_user(user_name,user_password):
@@ -50,12 +51,17 @@ def find_credential(name):
 def find_by_name(name):
     return Credential.find_by_name(name)
 
-def generate_password():
-    '''
-    generates a random password for credential
-    '''
-    generatedPassword = Credential.genarate_password()
-    return generatedPassword
+# def generate_password():
+#     '''
+#     generates a random password for credential
+#     '''
+#     generatedPassword = Credential.generate_password()
+#     return generatedPassword
+def generate_password(stringLength=8):
+    password_characters = string.ascii_uppercase + string.ascii_lowercase + string.digits + '!@#$%^&*?/|\()'
+    generated_password = ''.join(random.choice(password_characters) for i in range(stringLength))
+    return generated_password
+        
 
 def main():
     # global userlogin 
@@ -107,7 +113,7 @@ def main():
                                         elif short_code =='ge':
                                             account_password = generate_password()
                                             print(f'Your Generated Password is: {account_password}')
-                                            print(account_password)
+                                            # print(account_password)
                                             break
                                     print ('\n')
                                     save_credential(create_credential(account_name, account_user_name, account_password))
